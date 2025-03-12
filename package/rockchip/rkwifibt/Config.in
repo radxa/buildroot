@@ -7,4 +7,23 @@ config BR2_PACKAGE_RKWIFIBT_STATIC
 	bool "Enable static"
 	default y if BR2_STATIC_LIBS
 
+choice
+    prompt "Select AIC firmware type"
+    default BR2_PACKAGE_RKWIFIBT_AIC8800D80_NONE
+
+config BR2_PACKAGE_RKWIFIBT_AIC8800D80_NONE
+    bool "Do not install aic firmware"
+
+config BR2_PACKAGE_RKWIFIBT_AIC8800D80_SDIO_FIRMWARE
+    bool "Install aic8800d80 SDIO firmware"
+    help
+      AIC8800D80 SDIO WiFi/BT firmware.
+
+config BR2_PACKAGE_RKWIFIBT_AIC8800D80_USB_FIRMWARE
+    bool "Install aic8800d80 USB firmware"
+    help
+      AIC8800D80 USB WiFi/BT firmware.
+
+endchoice
+
 endif
