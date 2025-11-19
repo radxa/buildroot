@@ -26,13 +26,13 @@ endif
 ifneq ($(RKWIFIBT_AIC_FIRMWARE_DIRS),)
 define AIC_FIRMWARE_INSTALL_DIRS
 	$(foreach d,$(RKWIFIBT_AIC_FIRMWARE_DIRS), \
-		cp -a $(@D)/$(d)/* $(TARGET_DIR)/lib/firmware/aic/$(sep))
+		cp -a $(@D)/$(d)/* $(TARGET_DIR)/lib/firmware/aic8800D80/$(sep))
 endef
 endif
 
 define AIC_FIRMWARE_INSTALL_TARGET_CMDS
-	rm -rf $(TARGET_DIR)/lib/firmware/aic
-	mkdir -p $(TARGET_DIR)/lib/firmware/aic
+	rm -rf $(TARGET_DIR)/lib/firmware/aic8800D80
+	mkdir -p $(TARGET_DIR)/lib/firmware/aic8800D80
 	$(AIC_FIRMWARE_INSTALL_DIRS)
 endef
 
